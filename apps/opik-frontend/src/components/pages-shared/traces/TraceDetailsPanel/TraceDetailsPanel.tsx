@@ -162,6 +162,7 @@ const TraceDetailsPanel: React.FunctionComponent<TraceDetailsPanelProps> = ({
               activeSection={activeSection}
               setActiveSection={setActiveSection}
               isSpansLazyLoading={isSpansLazyLoading}
+              search={search}
             />
           </ResizablePanel>
           {Boolean(activeSection) && (

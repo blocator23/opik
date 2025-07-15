@@ -186,13 +186,14 @@ const AddEditRuleDialog: React.FC<AddEditRuleDialogProps> = ({
       name: formData.ruleName,
       project_id: formData.projectId,
       sampling_rate: formData.samplingRate,
+      enabled: defaultRule?.enabled ?? true, // Default to enabled for new rules, preserve existing value for edits
       type: formData.type,
       code:
         formData.type === EVALUATORS_RULE_TYPE.llm_judge
           ? convertLLMJudgeDataToLLMJudgeObject(formData.llmJudgeDetails)
           : formData.pythonCodeDetails,
     } as EvaluatorsRule;
-  }, [form]);
+  }, [form, defaultRule?.enabled]);
 
   const createPrompt = useCallback(() => {
     createMutate(

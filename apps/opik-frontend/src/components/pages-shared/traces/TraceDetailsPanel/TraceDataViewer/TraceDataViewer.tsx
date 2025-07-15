@@ -202,7 +202,7 @@ const TraceDataViewer: React.FunctionComponent<TraceDataViewerProps> = ({
             />
           </TabsContent>
           <TabsContent value="metadata">
-            <MetadataTab data={data} />
+            <MetadataTab data={data} search={search} />
           </TabsContent>
           {hasAgentGraph && (
             <TabsContent value="graph">
